@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width:600px; height:400px;"></div>
+    <script>
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.querySelector('#main'))
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '北京天气'
+            },
+            tooltip: {},
+            legend: {
+                data:['天气']
+            },
+            xAxis: {
+                data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+            },
+            yAxis: {},
+            series: [{
+                name: '天气',
+                type: 'bar',
+                data: [15, 20, 36, 25, 31, 20, 12]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
